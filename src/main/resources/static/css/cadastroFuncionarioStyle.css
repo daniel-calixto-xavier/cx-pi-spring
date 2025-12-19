@@ -1,0 +1,16 @@
+body, .form-control {
+    background-color: #232C58;
+    color: white;
+}
+
+#btnSalvar {
+    border-radius: 3px;
+    border: none;
+    background-color: #4c60c2;
+    transition: 0.3s ease;
+}
+
+#btnSalvar:hover{
+    background-color: #3c4c98;
+    transform: scale(1.05);
+}

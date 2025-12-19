@@ -1,0 +1,20 @@
+body {
+    background-color: #232C58;
+    color: white;
+}
+
+#btnVoltar{
+    padding: 10px 20px;
+    position: relative;
+    right: 10px;
+    bottom: 130px;
+    border: none;
+    background-color: #fa6969;
+    color: white;
+    transform: 0.3s ease;
+}
+
+#btnVoltar:hover {
+    transform: scale(1.05);
+    background-color: red;
+}

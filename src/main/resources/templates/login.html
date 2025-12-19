@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia CX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/loginStyle.css}">
+</head>
+<body>
+<div class="container d-flex flex-column align-items-center">
+    <div>
+        <img th:src="@{/assets/images/logo.png}" alt="">
+    </div>
+</div>
+<div class="container">
+    <form>
+        <div class=" d-flex flex-column gap-4 mt-5 align-items-center">
+            <div>
+                <label>
+                    Usuário:
+                    <input type="text">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Senha:
+                    <input type="text" style="position: relative; left: 5px;">
+                </label>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="telaCliente.html">
+                    <button type="button" id="entrarLogin">Entrar</button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

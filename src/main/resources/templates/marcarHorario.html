@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Horário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/marcarHorarioStyle.css}">
+</head>
+<body>
+<div class="container d-flex justify-content-center">
+    <a th:href="@{/telaInicial/pagina}">
+        <img th:src="@{/assets/images/logo.png}" alt="">
+    </a>
+</div>
+<div class="container d-flex flex-column align-items-center gap-3">
+    <form th:action="@{/horario/marcar}" method="post" class="form-control d-flex flex-column gap-3 mt-5 align-items-center">
+        <div>
+            <label class="mb-1" style="position: relative; left: 40px;">
+                Digite a data:
+            </label><br>
+            <input name="dataCorte" type="text" placeholder="DD/MM/YYYY">
+        </div>
+        <div>
+            <label class="mb-1" style="position: relative; left: 40px;">
+                Nome do cliente:
+            </label><br>
+            <input name="nomeCliente" type="text">
+        </div>
+        <div>
+            <label class="mb-1" style="position: relative; left: 60px;">
+                Barbeiro:
+            </label><br>
+            <input name="nomeBarbeiro" type="text">
+        </div>
+        <div>
+            <label class="mb-1" style="position: relative; left: 40px;">
+                Digite o horário:
+            </label><br>
+            <input name="horario" type="text" placeholder="HH:MM">
+        </div>
+        <div>
+            <label class="mb-1" style="position: relative;">
+                Digite a descrição do corte:
+            </label><br>
+            <input name="descricaoCorte" type="text">
+        </div>
+
+        <div>
+            <button id="btnMarcar">Marcar</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

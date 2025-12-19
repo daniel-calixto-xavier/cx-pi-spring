@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/listarClientesStyle.css}">
+</head>
+<body>
+    <div class="container d-flex justify-content-center">
+        <a th:href="@{/telaInicial/pagina}">
+            <img th:src="@{/assets/images/logo.png}" alt="">
+        </a>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <h2>Listar Clientes:</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead class="table-dark text-center">
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+                <th>Cpf</th>
+                <th>Endereço</th>
+                <th>Cep</th>
+                <th>Ações</th>
+            </thead>
+
+            <tbody>
+                <tr th:each="clientes : ${clientes}">
+                    <td th:text="${clientes.nome}"></td>
+                    <td th:text="${clientes.sobrenome}"></td>
+                    <td th:text="${clientes.telefone}"></td>
+                    <td th:text="${clientes.cpf}"></td>
+                    <td th:text="${clientes.endereco}"></td>
+                    <td th:text="${clientes.cep}"></td>
+                    <td class="text-center">
+                        <a th:href="@{/cliente/deletar/{id}(id=${clientes.id})}"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Tem certeza que deseja deletar este cliente?')">
+                            Deletar
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

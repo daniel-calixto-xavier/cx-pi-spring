@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    background-image: url("assets/imagemFundo.png");
+    background-size: 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#entrarLogin {
+    padding: 10px 40px;
+    border-radius: 2px;
+    background-color: rgb(27, 27, 108);
+    color: white;
+    transition: 0.3s ease;
+}
+
+#entrarLogin:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}

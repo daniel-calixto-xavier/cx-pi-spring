@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/consultarHorarioStyle.css}">
+</head>
+<body>
+    <div class="container d-flex">
+        <div class="col-4">
+            <a th:href="@{/telaInicial/pagina}">
+                <img th:src="@{/assets/images/logo.png}" alt="">
+            </a>
+        </div>
+        <div class="col-4 mt-4">
+            <h3>HORÁRIOS DISPONÍVEIS:</h3>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead class="table-dark text-center">
+                <th>Cliente</th>
+                <th>Barbeiro</th>
+                <th>Descrição de corte</th>
+                <th>Horario</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </thead>
+
+            <tbody>
+            <tr th:each="horarios : ${horarios}">
+                <td th:text="${horarios.nomeCliente}"></td>
+                <td th:text="${horarios.nomeBarbeiro}"></td>
+                <td th:text="${horarios.descricaoCorte}"></td>
+                <td th:text="${horarios.horario}"></td>
+                <td th:text="${horarios.dataCorte}"></td>
+                <td class="text-center">
+                    <a th:href="@{/horario/deletar/{id}(id=${horarios.id})}"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('Tem certeza que deseja deletar este horário?')">
+                        Deletar
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

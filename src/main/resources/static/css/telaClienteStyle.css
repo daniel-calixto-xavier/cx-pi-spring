@@ -1,0 +1,30 @@
+body {
+    background-color: #232C58;
+    color: white;
+}
+
+#btnLogin {
+    position: relative;
+    bottom: 90px;
+    right: 50px;
+    border: none;
+    color: white;
+    background-color: #232C58;
+}
+
+#imgUser {
+    position: relative;
+    bottom: 115px;
+}
+
+#marcarHorario, #consultarHorario, #cadastrar, #consultarUsuarios{
+    border: none;
+    color: white;
+    background-color: rgb(72, 72, 168);
+    transition: 0.3s ease;
+}
+
+#marcarHorario:hover, #consultarHorario:hover, #cadastrar:hover, #consultarUsuarios:hover {
+    background-color: #1a203f;
+    transform: scale(1.05);
+}
