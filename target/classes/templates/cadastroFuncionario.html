@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/cadastroFuncionarioStyle.css}">
+</head>
+<body>
+<div class="container d-flex justify-content-center">
+    <a th:href="@{/telaInicial/pagina}">
+        <img th:src="@{/assets/images/logo.png}" alt="">
+    </a>
+</div>
+<div class="container ">
+    <form th:action="@{/funcionario/salvar}" method="post" class="form-control d-flex flex-column gap-3 mt-5 align-items-center">
+        <label>
+            Nome: <input name="nome" type="text">
+        </label>
+        <label >
+            Sobrenome: <input name="sobrenome" type="text">
+        </label>
+        <label >
+            Telefone: <input name="telefone" type="text" placeholder="(00) 0000-0000">
+        </label>
+        <label >
+            Cpf: <input name="cpf" type="text" placeholder="000.000.000-00">
+        </label>
+        <label >
+            Nascimento: <input name="nascimento" type="text">
+        </label>
+        <label >
+            Endereço: <input name="endereco" type="text">
+        </label>
+        <label >
+            Cep: <input name="cep" type="text" placeholder="00000-000">
+        </label>
+        <label >
+            Cargo: <input name="cargo" type="text">
+        </label>
+        <button type="submit" id="btnSalvar">Salvar</button>
+    </form>
+</div>
+<script>
+    function maskTelefone(value) {
+        return value
+            .replace(/\D/g, '')
+            .replace(/^(\d{2})(\d)/, '$1.$2')
+            .replace(/(\d{4})(\d)/, '$1-$2')
+            .replace(/(-\d{4})\d+?$/, '$1');
+    }
+
+    function maskCPF(value) {
+        return value
+            .replace(/\D/g, '')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d{2})$/, '$1-$2');
+    }
+
+    function maskCEP(value) {
+        return value
+            .replace(/\D/g, '')
+            .replace(/(\d{5})(\d)/, '$1-$2')
+            .replace(/(-\d{3})\d+?$/, '$1');
+    }
+
+    function maskData(value) {
+        return value
+            .replace(/\D/g, '')
+            .replace(/(\d{2})(\d)/, '$1/$2')
+            .replace(/(\d{2})(\d)/, '$1/$2')
+            .replace(/(\/\d{4})\d+?$/, '$1');
+    }
+
+    document.querySelector('.telefone').addEventListener('input', e => {
+        e.target.value = maskTelefone(e.target.value);
+    });
+
+    document.querySelector('.cpf').addEventListener('input', e => {
+        e.target.value = maskCPF(e.target.value);
+    });
+
+    document.querySelector('.cep').addEventListener('input', e => {
+        e.target.value = maskCEP(e.target.value);
+    });
+
+    document.querySelector('.data').addEventListener('input', e => {
+        e.target.value = maskData(e.target.value);
+    });
+</script>
+</body>
+</html>

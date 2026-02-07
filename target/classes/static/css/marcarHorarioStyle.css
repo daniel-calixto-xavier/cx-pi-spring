@@ -1,0 +1,33 @@
+body {
+    background-color: #232C58;
+    color: white;
+}
+
+#voltarMarcar {
+    position: relative;
+    bottom: 80px;
+    padding: 10px 20px;
+    background-color: #fa6969;
+    color: white;
+    transform: 0.3s ease;
+    border: none;
+}
+
+#voltarMarcar:hover {
+    transform: scale(1.05);
+    background-color: red;
+}
+
+#btnMarcar {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    background-color: rgb(27, 27, 108);
+    transition: 0.3s ease;
+}
+
+#btnMarcar:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
